@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pomodoro Clock</title>
+</head>
+<style>
+    body {
+        background-color: rgb(229, 189, 134);
+    }
+
+    #mycontainer {
+        height: 80vh;
+        width: 43vh;
+        background-color: rgb(74, 64, 52);
+        box-shadow: 0px 15px 30px 5px rgb(74, 64, 52);
+        border-radius: 5px;
+    }
+
+    #timedisplay {
+        height: 35vh;
+        background-color: rgb(99, 99, 97);
+    }
+
+    h1 {
+        font-size: 3rem;
+        letter-spacing: 3px;
+    }
+
+    .bt {
+        border-top: 0.18rem dotted rgb(234, 233, 229);
+    }
+
+    .btn:hover {
+        box-shadow: 0px 0px 10px 0px rgb(234, 233, 229);
+    }
+    #buttonrow{
+        height: 13vh;
+    }
+    @media screen and (max-height: 590px) {
+        #mycontainer{
+            height: 95vh;
+        }
+        #buttonrow{
+            height: 20vh;
+        }
+    }
+</style>
+
+<body>
+    <div class="container-fluid d-flex align-items-center" style="height:100vh">
+        <div class="container " id="mycontainer" >
+            <div class="row m-1 mt-3" id="timedisplay">
+                <div class="col-11 ml-2 mt-2 mb-2 mr-2 d-flex justify-content-center align-items-center"
+                    style="background-color: rgb(234, 233, 229);">
+                    <h1 id="displaytime">00:00</h1>
+                </div>
+            </div>
+            <div class="row pt-2 d-flex justify-content-center">
+                <h5 style="color: rgb(234, 233, 229);" id="s_b_count">Session 0</h5>
+            </div>
+            <div class="row bt mr-1 ml-1 mb-2 mt-2 d-flex justify-content-center">
+                <div class="col-6 mt-1 d-flex justify-content-center"
+                    style="font-size: 14px;color: rgb(234, 233, 229);">Session time</div>
+                <div class="col-6 mt-1 d-flex justify-content-center"
+                    style="font-size: 14px;color: rgb(234, 233, 229);">Break time</div>
+                <div class="col-6 d-flex justify-content-center" id="st_label" style="font-size: 25px;color: rgb(30, 203, 217)">00 min
+                </div>
+                <div class="col-6 d-flex justify-content-center" id="br_label" style="font-size: 25px;color: rgb(221, 108, 72);">00 min
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                    <button class="btn mr-1 tb"
+                        style="background-color:rgb(28, 24, 21);color:rgb(234, 233, 229);" onclick="session_counter(true)">-</button>
+                    <button class="btn ml-1 tb"
+                        style="background-color: rgb(28, 24, 21);color:rgb(234, 233, 229);" onclick="session_counter(false)">+</button>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                    <button class="btn mr-1 tb"
+                        style="background-color: rgb(28, 24, 21);color:rgb(234, 233, 229);" onclick="break_counter(true)">-</button>
+                    <button class="btn ml-1 tb"
+                        style="background-color: rgb(28, 24, 21);color:rgb(234, 233, 229);" onclick="break_counter(false)">+</button>
+                </div>
+            </div>
+            <div class="row bt m-2 d-flex justify-content-center align-items-center" id="buttonrow">
+                <div class="col-6 mt-3 d-flex justify-content-center"><button class="btn" id="start"
+                        style="background-color:rgb(28, 24, 21);color:rgb(234, 233, 229);height: 2.5rem;width: 5rem;" onclick="onstart()">Start</button></div>
+                <div class="col-6 mt-3 d-flex justify-content-center"><button class="btn" id="reset"
+                        style="background-color:rgb(28, 24, 21);color:rgb(234, 233, 229);height: 2.5rem;width: 5rem;" onclick="onresets()">Reset</button></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
